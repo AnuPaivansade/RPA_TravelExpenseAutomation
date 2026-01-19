@@ -1,0 +1,6 @@
+{
+  "Name": "TravelExpenseAutomation",
+  "ProjectType": "Process",
+  "Description": "Blank Process",
+  "MainFile": "Workflows\\Main.xaml"
+}

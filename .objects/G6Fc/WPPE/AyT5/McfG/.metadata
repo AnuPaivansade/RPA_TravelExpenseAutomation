@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Kaikki",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "McfG874gXUSPfzxR5xK6uQ",
+  "Reference": "1jq6hiTGH0GDEH0b1QV-Fg/McfG874gXUSPfzxR5xK6uQ",
+  "ParentRef": "1jq6hiTGH0GDEH0b1QV-Fg/AyT5OTv0gk2LXiuuRr_dLA",
+  "Created": "2026-01-07T15:54:29.3299754Z",
+  "Updated": "2026-01-07T15:54:29.3299754Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.22.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

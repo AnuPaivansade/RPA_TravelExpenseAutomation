@@ -1,0 +1,33 @@
+
+################################################################################
+# Added by UiPath Studio
+# Prevent caching and local artifacts from being committed
+################################################################################
+# UiPath local & runtime
+.project/
+.local/
+.settings/
+
+# Logs
+*.log
+
+# Output files
+*.pdf
+
+# Config with personal data
+**/config.xlsx
+
+# Temp & runtime folders
+Temp/
+Processed/
+Reports/
+Input/
+
+# Email / auth caches
+**/credentials.json
+**/token*
+**/*.cache
+
+################################################################################
+# End of UiPath Studio common ignores
+################################################################################
