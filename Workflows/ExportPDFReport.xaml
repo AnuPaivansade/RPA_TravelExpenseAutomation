@@ -103,38 +103,26 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow exports the generated pivot report into PDF format.&#xD;&#xA;&#xD;&#xA;It converts the Excel-based pivot report into a PDF file, making the report suitable for sharing and archival purposes." DisplayName="ExportPDFReport" sap:VirtualizedContainerService.HintSize="1210,1751" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="TravelExpenseReportsPath" />
-    </Sequence.Variables>
+  <Sequence sap2010:Annotation.AnnotationText="This workflow exports the generated pivot report into PDF format.&#xA;&#xA;It converts the Excel-based pivot report into a PDF file, making the report suitable for sharing and archival purposes." DisplayName="ExportPDFReport" sap:VirtualizedContainerService.HintSize="1210,1493" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="638,175" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[TravelExpenseReportsPath]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[Path.Combine(in_Config("BaseFolder").ToString(), "Travel Expense Invoice Reports")]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="638,123" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[TravelExpenseReportsPath]" />
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="638,1369" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="638,1409" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="604,1259" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="604,1299" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" SensitivityLabel="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="570,1195" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" SensitivityOperation="None" WorkbookPath="[Path.Combine(in_Config(&quot;BaseFolder&quot;).ToString(), &quot;Report Template.xlsx&quot;)]">
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" SensitivityLabel="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="570,1235" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" SensitivityOperation="None" WorkbookPath="[Path.Combine(in_Config(&quot;BaseFolder&quot;).ToString(), &quot;Report Template.xlsx&quot;)]">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
@@ -159,7 +147,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ueab:CopyPasteRangeX DestinationRange="[OneReportExcel.Sheet(&quot;Sheet1&quot;)]" DisplayName="Copy/Paste Range" sap:VirtualizedContainerService.HintSize="434,279" sap2010:WorkflowViewState.IdRef="CopyPasteRangeX_1" PasteOptions="All" SourceRange="[PivotReportExcel.Sheet(&quot;Report&quot;).PivotTable(&quot;PivotReport&quot;)]" Transpose="False" />
-                            <ueab:SaveAsPdfX EndPage="{x:Null}" StartPage="{x:Null}" DestinationPdfPath="[Path.Combine(&#xA;    TravelExpenseReportsPath,&#xA;    &quot;TravelExpenseReport_&quot; &amp; Now.ToString(&quot;ddMMyyyy&quot;) &amp; &quot;.pdf&quot;&#xA;)]" DisplayName="Save Excel File As PDF" sap:VirtualizedContainerService.HintSize="434,188" sap2010:WorkflowViewState.IdRef="SaveAsPdfX_1" ReplaceExisting="False" SaveQuality="StandardQuality" Workbook="[OneReportExcel]" />
+                            <ueab:SaveAsPdfX EndPage="{x:Null}" StartPage="{x:Null}" DestinationPdfPath="[Path.Combine(in_Config(&quot;ReportFolder&quot;).ToString(), &quot;TravelExpenseReport_&quot; &amp; Now.ToString(&quot;ddMMyyyy&quot;) &amp; &quot;.pdf&quot;)]" DisplayName="Save Excel File As PDF" sap:VirtualizedContainerService.HintSize="434,188" sap2010:WorkflowViewState.IdRef="SaveAsPdfX_1" ReplaceExisting="False" SaveQuality="StandardQuality" Workbook="[OneReportExcel]" />
                           </Sequence>
                         </ActivityAction>
                       </ueab:ExcelApplicationCard.Body>

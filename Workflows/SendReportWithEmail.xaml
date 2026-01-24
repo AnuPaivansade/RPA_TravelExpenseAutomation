@@ -133,11 +133,7 @@
         <OutArgument x:TypeArguments="x:String">[PivotReportPath]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String" xml:space="preserve">[Path.Combine(
-    in_Config("BaseFolder").ToString(),
-    "Travel Expense Invoice Reports",
-    "TravelExpenseReport_" &amp; Now.ToString("ddMMyyyy") &amp; ".pdf"
-)]</InArgument>
+        <InArgument x:TypeArguments="x:String">[Path.Combine(in_Config("ReportFolder").ToString(), "TravelExpenseReport_" &amp; Now.ToString("ddMMyyyy") &amp; ".pdf")]</InArgument>
       </Assign.Value>
     </Assign>
     <Assign DisplayName="Assign EmailReceiver" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="Assign_4">
